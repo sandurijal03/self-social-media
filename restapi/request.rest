@@ -1,0 +1,99 @@
+POST http://localhost:3001/api/auth/register 
+Content-Type: application/json
+
+{
+  "username": "everyone",
+  "email": "everyone@example.com",
+  "password": "123456"
+}
+
+###
+POST http://localhost:3001/api/auth/login 
+Content-Type: application/json
+
+{
+  "username": "someone",
+  "password": "123456"
+}
+
+###
+PUT http://localhost:3001/api/users/6072ed2527f51b9a60f2c268
+Content-Type: application/json
+
+{
+  "description": "this is my third updated description",
+  "_id": "6072ed2527f51b9a60f2c268"
+}
+
+###
+DELETE http://localhost:3001/api/users/6072ed2527f51b9a60f2c268
+Content-Type: application/json
+
+{
+  "_id": "6072ed2527f51b9a60f2c268"
+}
+
+###
+GET http://localhost:3001/api/users/60730382d62bb7143da1740e
+
+###
+PUT http://localhost:3001/api/users/6073099170b6232c7aeea0c9/follow
+Content-Type: application/json
+
+{
+  "_id": "6073098670b6232c7aeea0c8"
+}
+
+###
+PUT http://localhost:3001/api/users/60730382d62bb7143da1740e/unfollow
+Content-Type: application/json
+
+{
+  "_id": "6073068545a13921afcd2987"
+}
+
+###
+POST http://localhost:3001/api/posts
+Content-Type: application/json
+
+{
+  "user": "6073068545a13921afcd2987",
+  "description": "this is my first post"
+}
+
+
+###
+PUT http://localhost:3001/api/posts/6073f9e7a1f45068bfe2a3f2
+Content-Type: application/json
+
+{
+  "user": "6073068545a13921afcd2987",
+  "description": "updating posts description second time"
+}
+
+###
+DELETE http://localhost:3001/api/posts/6073f9e7a1f45068bfe2a3f2
+Content-Type: application/json
+
+{
+  "user": "6073068545a13921afcd2987"
+}
+
+###
+PUT http://localhost:3001/api/posts/6074042226fb939e37c4d0f0/like
+Content-Type: application/json
+
+{
+  "user": "6073068545a13921afcd2987"
+}
+
+###
+GET http://localhost:3001/api/posts/6074042226fb939e37c4d0f0
+
+###
+GET http://localhost:3001/api/posts/timeline/all 
+Content-Type: application/json
+
+{
+  "user": "6073068545a13921afcd2987"
+}
